@@ -17,33 +17,37 @@ $result = $conn->query($sql);
 <body>
 
 <h2>Display Image With Title</h2>
-
 <h3><a href="./create.php">Add Image</a></h3>
 
 <?php
 if ($result->num_rows > 0) {
-
     while ($row = $result->fetch_assoc()) {
         $title = $row['title'];
         $path  = $row['path'];
         ?>
         
-       
-   <div style="width:200px; height:300px; display:inline-block; margin-bottom:20px;">
-    <img style="width:100%; height:200px; object-fit:cover;" 
-         src="<?php echo $path; ?>" 
-         alt="<?php echo $title; ?>">
-    <p><?php echo $title; ?></p>
-</div>
-       
+        <div style="width:200px; height:300px; display:inline-block; margin-bottom:20px;">
+            <img 
+                style="width:100%; height:200px; object-fit:cover;" 
+                src="<?php echo $path; ?>" 
+                alt="<?php echo $title; ?>"
+            >
+            <p><?php echo $title; ?></p>
+        </div>
 
         <?php
     }
-
 } else {
-    echo "No image found";
+    echo "<p>No image found</p>";
 }
 ?>
+
+<hr>
+
+<!-- Git test content -->
+<h1>Hello</h1>
+<h2>Ami akhon sikhe gechi</h2>
+<h2>Change some code</h2>
 
 </body>
 </html>
