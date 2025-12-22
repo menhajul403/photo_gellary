@@ -1,11 +1,6 @@
 <?php
 // ================= DB CONNECTION =================
-$conn = new mysqli("localhost", "root", "", "test");
-
-if ($conn->connect_error) {
-    die("DB Connection Failed");
-}
-
+include('./db.php');
 // ================= FORM SUBMIT =================
 $message = "";
 
@@ -54,6 +49,7 @@ if (isset($_POST['submit'])) {
             $message = "❌ Image upload failed";
         }
     }
+    header('location:index.php');
 }
 ?>
 
